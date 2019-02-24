@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="9">
+      <Unit0>
+        <Filename Value="zapoctak.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Kingswood"/>
+        <CursorPos X="36" Y="23"/>
+        <UsageCount Value="121"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="typehandling.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="32" Y="9"/>
+        <UsageCount Value="60"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="levelhandling.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="88"/>
+        <CursorPos X="15" Y="152"/>
+        <FoldState Value=" T3M0f4p"/>
+        <UsageCount Value="37"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="playerhandling.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="8"/>
+        <CursorPos X="44" Y="58"/>
+        <FoldState Value=" T3J04112:"/>
+        <UsageCount Value="54"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="commandhandling.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="24" Y="15"/>
+        <FoldState Value=" T6e01 T1iV0E T3iI07u"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="functionhandling.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="4"/>
+        <CursorPos Y="21"/>
+        <FoldState Value=" T3T0At"/>
+        <UsageCount Value="28"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="areahandling.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="19" Y="5"/>
+        <UsageCount Value="112"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="types.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="10" Y="8"/>
+        <UsageCount Value="55"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="superfastconsole.pas"/>
+        <UnitName Value="SuperFastConsole"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="6"/>
+        <UsageCount Value="31"/>
+      </Unit8>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="levelhandling.pas"/>
+        <Caret Line="112" Column="49" TopLine="12"/>
+      </Position1>
+      <Position2>
+        <Filename Value="functionhandling.pas"/>
+        <Caret Line="10" Column="44"/>
+      </Position2>
+      <Position3>
+        <Filename Value="playerhandling.pas"/>
+        <Caret Line="24" Column="98"/>
+      </Position3>
+      <Position4>
+        <Filename Value="levelhandling.pas"/>
+        <Caret Line="15" Column="31"/>
+      </Position4>
+      <Position5>
+        <Filename Value="commandhandling.pas"/>
+        <Caret Line="106" Column="41" TopLine="38"/>
+      </Position5>
+      <Position6>
+        <Filename Value="commandhandling.pas"/>
+        <Caret Line="112" Column="85" TopLine="38"/>
+      </Position6>
+      <Position7>
+        <Filename Value="commandhandling.pas"/>
+        <Caret Line="113" Column="22" TopLine="38"/>
+      </Position7>
+      <Position8>
+        <Filename Value="commandhandling.pas"/>
+        <Caret Line="117" Column="5" TopLine="39"/>
+      </Position8>
+      <Position9>
+        <Filename Value="zapoctak.pas"/>
+        <Caret Line="5" Column="43"/>
+      </Position9>
+      <Position10>
+        <Filename Value="levelhandling.pas"/>
+        <Caret Line="33" Column="31" TopLine="21"/>
+      </Position10>
+      <Position11>
+        <Filename Value="levelhandling.pas"/>
+        <Caret Line="53" Column="35" TopLine="21"/>
+      </Position11>
+      <Position12>
+        <Filename Value="commandhandling.pas"/>
+        <Caret Line="106" Column="10" TopLine="58"/>
+      </Position12>
+      <Position13>
+        <Filename Value="commandhandling.pas"/>
+        <Caret Line="104" Column="119" TopLine="59"/>
+      </Position13>
+      <Position14>
+        <Filename Value="commandhandling.pas"/>
+        <Caret Line="109" Column="13" TopLine="59"/>
+      </Position14>
+      <Position15>
+        <Filename Value="commandhandling.pas"/>
+        <Caret Line="116" Column="26" TopLine="57"/>
+      </Position15>
+      <Position16>
+        <Filename Value="commandhandling.pas"/>
+        <Caret Line="113" Column="87" TopLine="57"/>
+      </Position16>
+      <Position17>
+        <Filename Value="typehandling.pas"/>
+        <Caret Line="9" Column="32"/>
+      </Position17>
+      <Position18>
+        <Filename Value="levelhandling.pas"/>
+        <Caret Line="58" Column="35" TopLine="40"/>
+      </Position18>
+      <Position19>
+        <Filename Value="levelhandling.pas"/>
+        <Caret Line="61" Column="30" TopLine="31"/>
+      </Position19>
+      <Position20>
+        <Filename Value="levelhandling.pas"/>
+        <Caret Line="59" Column="44" TopLine="31"/>
+      </Position20>
+      <Position21>
+        <Filename Value="levelhandling.pas"/>
+        <Caret Line="52" Column="50" TopLine="31"/>
+      </Position21>
+      <Position22>
+        <Filename Value="functionhandling.pas"/>
+        <Caret Line="26" Column="13"/>
+      </Position22>
+      <Position23>
+        <Filename Value="functionhandling.pas"/>
+        <Caret Line="10" Column="51"/>
+      </Position23>
+      <Position24>
+        <Filename Value="functionhandling.pas"/>
+        <Caret Line="26" Column="10"/>
+      </Position24>
+      <Position25>
+        <Filename Value="functionhandling.pas"/>
+        <Caret Line="25" Column="28"/>
+      </Position25>
+      <Position26>
+        <Filename Value="levelhandling.pas"/>
+        <Caret Line="84" Column="27" TopLine="54"/>
+      </Position26>
+      <Position27>
+        <Filename Value="commandhandling.pas"/>
+        <Caret Line="150" Column="40" TopLine="121"/>
+      </Position27>
+      <Position28>
+        <Filename Value="playerhandling.pas"/>
+        <Caret Line="37" Column="104" TopLine="3"/>
+      </Position28>
+      <Position29>
+        <Filename Value="playerhandling.pas"/>
+        <Caret Line="58" Column="44" TopLine="8"/>
+      </Position29>
+      <Position30>
+        <Filename Value="levelhandling.pas"/>
+        <Caret Line="152" Column="15" TopLine="88"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
