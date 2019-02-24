@@ -7,56 +7,60 @@ interface
 uses
   Classes, SysUtils, typehandling, functionhandling;
 
-procedure gaingold(amount: Integer);
-procedure losegold(amount: Integer);
-procedure healplayer(amount: Integer);
-procedure damageplayer(amount: Integer);
+procedure gaingold(amount: integer);
+procedure losegold(amount: integer);
+procedure healplayer(amount: integer);
+procedure damageplayer(amount: integer);
 procedure teleportplayer(x, y: integer);
-procedure gaindamage(amount: Integer);
+procedure gaindamage(amount: integer);
 
 implementation
 
 //Gives the player the specified amount of gold
-procedure gaingold(amount: Integer);
+procedure gaingold(amount: integer);
 begin
   player^.gold := player^.gold + amount;
-  writeln('You have gained ' + inttostr(amount) + ' gold (You now have ' + inttostr(player^.gold) + ' gold)')
+  writeln('You have gained ' + IntToStr(amount) + ' gold (You now have ' +
+    IntToStr(player^.gold) + ' gold)');
 end;
 
 //Removes the specified amount of gold from the player
-procedure losegold(amount: Integer);
+procedure losegold(amount: integer);
 begin
   player^.gold := player^.gold - amount;
-  writeln('You have lost ' + inttostr(amount) + ' gold (You now have ' + inttostr(player^.gold) + ' gold)')
+  writeln('You have lost ' + IntToStr(amount) + ' gold (You now have ' +
+    IntToStr(player^.gold) + ' gold)');
 end;
 
 //Increases the players health by the specified amount
-procedure healplayer(amount: Integer);
+procedure healplayer(amount: integer);
 begin
   player^.health := player^.health + amount;
-  writeln('You have gained ' + inttostr(amount) + ' health (You now have ' + inttostr(player^.health));
+  writeln('You have gained ' + IntToStr(amount) + ' health (You now have ' +
+    IntToStr(player^.health) + ')');
 end;
 
 //Reduces the players health by the specified amount
-procedure damageplayer(amount: Integer);
+procedure damageplayer(amount: integer);
 begin
   player^.health := player^.health - amount;
-  writeln('You have taken ' + inttostr(amount) + ' damage and have ' + inttostr(player^.health) + ' health remaining')
+  writeln('You have taken ' + IntToStr(amount) + ' damage and have ' +
+    IntToStr(player^.health) + ' health remaining');
 end;
 
 //Sets player coordinates to a specific value
-procedure teleportplayer(x, y: Integer);
+procedure teleportplayer(x, y: integer);
 begin
   player^.x := x;
   player^.y := y;
 end;
 
 //Increases the players damage by the specified amount
-procedure gaindamage(amount: Integer);
+procedure gaindamage(amount: integer);
 begin
-  write('Your damage has increased from ' + inttostr(player^.damage) + ' to ');
+  Write('Your damage has increased from ' + IntToStr(player^.damage) + ' to ');
   player^.damage := player^.damage + amount;
   writeln(IntToStr(player^.damage));
 end;
-end.
 
+end.

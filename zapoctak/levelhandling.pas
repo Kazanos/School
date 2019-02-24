@@ -11,8 +11,8 @@ uses
 procedure loadlevel(path: string);
 procedure savelevel(path: string);
 procedure writelevel();
-procedure movecharacter(x, y: Integer);
-procedure fight(index: Integer);
+procedure movecharacter(x, y: integer);
+procedure fight(index: integer);
 procedure buyweapon();
 procedure buyhealth();
 
@@ -26,7 +26,7 @@ var
   temp: char;
   r: textfile;
 begin
-  Assign(r, 'data/'+path+'.txt');
+  Assign(r, 'data/' + path + '.txt');
   reset(r);
   readln(r, level^.Height);
   readln(r, level^.Width);
@@ -45,12 +45,12 @@ begin
       if temp = 'M' then
       begin
         setlength(level^.monsters, length(level^.monsters) + 1);
-        new(level^.monsters[length(level^.monsters)-1]);
-        level^.monsters[length(level^.monsters)-1]^.x := j;
-        level^.monsters[length(level^.monsters)-1]^.y := i;
-        level^.monsters[length(level^.monsters)-1]^.bounty := 2;
-        level^.monsters[length(level^.monsters)-1]^.health := 25;
-        level^.monsters[length(level^.monsters)-1]^.damage := 4;
+        new(level^.monsters[length(level^.monsters) - 1]);
+        level^.monsters[length(level^.monsters) - 1]^.x := j;
+        level^.monsters[length(level^.monsters) - 1]^.y := i;
+        level^.monsters[length(level^.monsters) - 1]^.bounty := 2;
+        level^.monsters[length(level^.monsters) - 1]^.health := 25;
+        level^.monsters[length(level^.monsters) - 1]^.damage := 4;
       end;
       level^.area[i][j] := temp;
     end;
@@ -69,7 +69,7 @@ var
   i, j: integer;
   w: textfile;
 begin
-  Assign(w, 'data/'+path+'.txt');
+  Assign(w, 'data/' + path + '.txt');
   rewrite(w);
   writeln(w, level^.Height);
   writeln(w, level^.Width);
@@ -102,22 +102,23 @@ begin
 end;
 
 //Moves the player on the map
-procedure movecharacter(x, y: Integer);
+procedure movecharacter(x, y: integer);
 begin
   level^.area[player^.y][player^.x] := ' ';
   level^.area[player^.y + y][player^.x + x] := 'P';
-  teleportplayer(player^.x + x, player^.y + y)
+  teleportplayer(player^.x + x, player^.y + y);
 end;
 
 //Fights the monster of the specified index in the array of monsters
-procedure fight(index: Integer);
+procedure fight(index: integer);
 begin
   level^.monsters[index]^.health := level^.monsters[index]^.health - player^.damage;
-  writeln('You have dealt ' + inttostr(player^.damage) +
-          ' damage (monster has ' + inttostr(level^.monsters[index]^.health) + ' health left)');
+  writeln('You have dealt ' + IntToStr(player^.damage) +
+    ' damage (monster has ' + IntToStr(level^.monsters[index]^.health) +
+    ' health left)');
   if level^.monsters[index]^.health > 0 then
   begin
-    damageplayer(level^.monsters[index]^.damage)
+    damageplayer(level^.monsters[index]^.damage);
   end
   else
   begin

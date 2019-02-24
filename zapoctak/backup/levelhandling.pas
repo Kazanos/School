@@ -149,7 +149,7 @@ begin
   if player^.gold >= 1 then
   begin
     losegold(1);
-    gainhealth(7);
+    healplayer(7);
   end
   else
   begin

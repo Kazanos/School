@@ -12,6 +12,7 @@ procedure askload();
 procedure asksave();
 procedure attemptmove();
 procedure attemptfight();
+procedure attemptbuy();
 
 implementation
 
@@ -23,7 +24,7 @@ begin
   askload;
 end;
 
-//Command crossroads
+//Command crossroads and checks player status after the command
 procedure undergo(text:String);
 begin
   case text of
@@ -33,6 +34,11 @@ begin
   'fight', 'f': attemptfight;
   'buy', 'b': attemptbuy;
   end;
+  if player ^.health <= 0 then
+    begin
+      writeln('You have died and have to start a new game or load a previous save');
+      start();
+    end;
 end;
 
 //Loads what the player wants to load

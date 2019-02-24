@@ -2,22 +2,23 @@ program Kingswood;
 
 uses
   Classes,
-  SysUtils, commandhandling, levelhandling;
+  SysUtils,
+  commandhandling,
+  levelhandling;
 
 var
-  playing: Boolean;
-  text: String;
+  playing: boolean;
+  Text: string;
 
 begin
   start();
-  playing := true;
+  playing := True;
   while playing do
   begin
-    writeln('What do you wish to do? (move, fight, save, load)');
-    readln(text);
-    undergo(text);
+    writeln('What do you wish to do? (move, fight, buy, save, load)');
+    readln(Text);
+    undergo(Text);
   end;
-
   readln;
   readln;
 end.

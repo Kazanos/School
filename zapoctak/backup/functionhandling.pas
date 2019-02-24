@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, typehandling;
 
-procedure RemoveMonster(a: array of Pointer; index: Integer);
+procedure RemoveMonster(index: Integer);
 function IntToStr(number: Integer): string;
 
 implementation

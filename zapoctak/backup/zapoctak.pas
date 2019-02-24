@@ -2,7 +2,7 @@ program Kingswood;
 
 uses
   Classes,
-  SysUtils, commandhandling, levelhandling, unit1;
+  SysUtils, commandhandling, levelhandling;
 
 var
   playing: Boolean;
@@ -13,11 +13,10 @@ begin
   playing := true;
   while playing do
   begin
-    writeln('What do you wish to do? (move, fight, save, load)');
+    writeln('What do you wish to do? (move, fight, buy, save, load)');
     readln(text);
     undergo(text);
   end;
-
   readln;
   readln;
 end.

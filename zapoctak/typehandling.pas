@@ -27,7 +27,7 @@ type
 var
   level: PLevel;
   player: PPlayer;
+
 implementation
 
 end.
-

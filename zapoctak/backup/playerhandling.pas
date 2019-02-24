@@ -34,7 +34,7 @@ end;
 procedure healplayer(amount: Integer);
 begin
   player^.health := player^.health + amount;
-  writeln('You have gained ' + inttostr(amount) + ' health (You now have ' + inttostr(player^.health));
+  writeln('You have gained ' + inttostr(amount) + ' health (You now have ' + inttostr(player^.health) + ')');
 end;
 
 //Reduces the players health by the specified amount
@@ -55,7 +55,7 @@ end;
 procedure gaindamage(amount: Integer);
 begin
   write('Your damage has increased from ' + inttostr(player^.damage) + ' to ');
-  player^.damage := player^.damage + amount);
+  player^.damage := player^.damage + amount;
   writeln(IntToStr(player^.damage));
 end;
 end.

@@ -6,7 +6,7 @@ interface
 
 type
   TPlayer = record
-    level, health, gold: integer;
+    level, health, gold, damage: integer;
     x, y: integer;
   end;
   PPlayer = ^TPlayer;
