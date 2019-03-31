@@ -1,0 +1,17 @@
+S entrance
+S mild
+A bear 10 5
+A fox 5 4
+A rabbit 7 6
+A owl 14 7
+S polar
+A penguin 20 13
+A manatee 13 8
+S tropic
+A snake 7 3
+A monkey 25 15
+A mosquito 3 1
+V Alex 10 100 fox manatee owl mosquito
+V Bethany 25 130 bear fox rabbit owl penguin manatee
+V Camille 16 150 snake monkey mosquito rabbit monkey
+V Dracula 13 200 mosquito owl mosquito owl mosquito owl mosquito owl mosquito owl

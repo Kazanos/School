@@ -9,7 +9,7 @@ namespace Zoo
     public enum EventType
     {
         Move,
-        Watch,
+        Watch
     }
 
     public class Event
@@ -94,10 +94,10 @@ namespace Zoo
         {
             this.model = model;
             string[] descriptions = desc.Split(Process.dividers, StringSplitOptions.RemoveEmptyEntries);
-            this.ID = descriptions[1];
+            this.ID = descriptions[0];
             this.section = section;
-            this.speed = int.Parse(descriptions[2]);
-            this.effectiveness = int.Parse(descriptions[3]);
+            this.speed = int.Parse(descriptions[1]);
+            this.effectiveness = int.Parse(descriptions[2]);
         }
 
         public override void Handle(Event e)
@@ -145,6 +145,7 @@ namespace Zoo
                     }
                     else
                     {
+                        //Checks whether it's not taking too long to visit all the animals
                         if (patience < (model.Time - arrival))
                             {
                             bool found = false;
@@ -160,6 +161,7 @@ namespace Zoo
 
                             if (!found)
                             {
+                                //Immediately rehandles the event with the next desire
                                 log("Couldnt find " + Desires[0]);
                                 Desires.RemoveAt(0);
                                 Handle(e);
@@ -191,7 +193,16 @@ namespace Zoo
 
         private void GoTo(string where, Animal target)
         {
-            int travelTime = Math.Min(model.Sections.IndexOf(target.section), model.Sections.Count - model.Sections.IndexOf(target.section));
+            int travelTime = 0;
+            //Sets travel time according to a circular zoo structure, based on the order of sections in the data file
+            if (target != null)
+            {
+                travelTime = Math.Min(model.Sections.IndexOf(target.section), model.Sections.Count - model.Sections.IndexOf(target.section));
+            }
+            else
+            {
+                travelTime = Math.Min(model.Sections.IndexOf(section), model.Sections.IndexOf(section) - model.Sections.Count);
+            } 
             model.Plan(model.Time + travelTime, this, EventType.Watch);
             log("Going to " + Desires[0]);
         }
