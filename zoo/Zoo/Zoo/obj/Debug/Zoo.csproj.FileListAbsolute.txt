@@ -1,0 +1,7 @@
+F:\skola\programko\zoo\Zoo\Zoo\obj\Debug\Zoo.csprojAssemblyReference.cache
+F:\skola\programko\zoo\Zoo\Zoo\obj\Debug\Zoo.csproj.CoreCompileInputs.cache
+F:\skola\programko\zoo\Zoo\Zoo\bin\Debug\Zoo.exe.config
+F:\skola\programko\zoo\Zoo\Zoo\bin\Debug\Zoo.exe
+F:\skola\programko\zoo\Zoo\Zoo\bin\Debug\Zoo.pdb
+F:\skola\programko\zoo\Zoo\Zoo\obj\Debug\Zoo.exe
+F:\skola\programko\zoo\Zoo\Zoo\obj\Debug\Zoo.pdb
