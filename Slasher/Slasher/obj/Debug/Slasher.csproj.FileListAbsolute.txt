@@ -1,0 +1,9 @@
+c:\users\micha\documents\visual studio 2017\Projects\Slasher\Slasher\bin\Debug\Slasher.exe.config
+c:\users\micha\documents\visual studio 2017\Projects\Slasher\Slasher\bin\Debug\Slasher.exe
+c:\users\micha\documents\visual studio 2017\Projects\Slasher\Slasher\bin\Debug\Slasher.pdb
+c:\users\micha\documents\visual studio 2017\Projects\Slasher\Slasher\obj\Debug\Slasher.csprojResolveAssemblyReference.cache
+c:\users\micha\documents\visual studio 2017\Projects\Slasher\Slasher\obj\Debug\Slasher.Form1.resources
+c:\users\micha\documents\visual studio 2017\Projects\Slasher\Slasher\obj\Debug\Slasher.Properties.Resources.resources
+c:\users\micha\documents\visual studio 2017\Projects\Slasher\Slasher\obj\Debug\Slasher.csproj.GenerateResource.Cache
+c:\users\micha\documents\visual studio 2017\Projects\Slasher\Slasher\obj\Debug\Slasher.exe
+c:\users\micha\documents\visual studio 2017\Projects\Slasher\Slasher\obj\Debug\Slasher.pdb
