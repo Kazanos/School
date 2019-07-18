@@ -30,11 +30,11 @@ namespace Slasher
         public Room(string n, int diff)
         {
             name = n;
-            if (name[7] == 'b')
+            if (name[6] == 'b')
             {
                 type = "special";
             }
-            else if (name[7] == 'r')
+            else if (name[6] == 'r')
             {
                 type = "room";
             }
@@ -51,8 +51,6 @@ namespace Slasher
                         field[i, j] = int.Parse(numbers[j]);
                     }
                 }
-
-                string line = file.ReadLine();
 
                 if (!file.EndOfStream)
                 {
