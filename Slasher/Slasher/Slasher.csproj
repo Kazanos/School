@@ -45,8 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Boss.cs" />
+    <Compile Include="CreatureTypes\Boss.cs" />
     <Compile Include="Creature.cs" />
+    <Compile Include="DrawingFunctions.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,8 +56,12 @@
     </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="Items\Coin.cs" />
+    <Compile Include="Items\Healthpoint.cs" />
+    <Compile Include="Items\Upgrade.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Projectile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -84,5 +89,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

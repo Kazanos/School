@@ -20,10 +20,10 @@ namespace Slasher
         static int tileHeight = resy / 18;
         static int xoffset = (resx - 17 * tileWidth) / 2;
         static int yoffset = (resy - 17 * tileHeight) / 2;
-        Bitmap bmp;
-        Graphics g;
-        private static Game game;
-        int x;
+        static Bitmap bmp;
+        static Graphics g;
+        static Game game;
+        static Random random = new Random();
 
         internal static Game Game { get => game; set => game = value; }
         public static int Resx { get => resx; set => resx = value; }
@@ -32,6 +32,8 @@ namespace Slasher
         public static int TileHeight { get => tileHeight; set => tileHeight = value; }
         public static int Xoffset { get => xoffset; set => xoffset = value; }
         public static int Yoffset { get => yoffset; set => yoffset = value; }
+        public static Graphics G { get => g; set => g = value; }
+        public static Random Random { get => random; set => random = value; }
 
         public Form1()
         {
@@ -43,7 +45,7 @@ namespace Slasher
 
             game = new Game();
             game.Players.Add(new Player());
-            timer1.Interval = 18;
+            timer1.Interval = 30;
             timer1.Start();
         }
 
@@ -56,6 +58,7 @@ namespace Slasher
         {
             game.Move();
             game.Draw();
+            pictureBox1.Refresh();
             foreach (Player p in game.Players)
             {
                 p.Attackcharge += timer1.Interval;
@@ -65,6 +68,89 @@ namespace Slasher
                 enemy.Movecharge += timer1.Interval;
                 enemy.Attackcharge += timer1.Interval;
                 enemy.Shoot();
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                //pohyb prveho hraca
+                case Keys.W: game.Players[0].Direction = new Tuple<int, int>(game.Players[0].Direction.Item1, -1); break;
+                case Keys.A: game.Players[0].Direction = new Tuple<int, int>(-1, game.Players[0].Direction.Item2); break;
+                case Keys.S: game.Players[0].Direction = new Tuple<int, int>(game.Players[0].Direction.Item1, 1); break;
+                case Keys.D: game.Players[0].Direction = new Tuple<int, int>(1, game.Players[0].Direction.Item2); break;
+                //strielanie prveho hraca
+                case Keys.I: game.Players[0].Shotdirection = new Tuple<int, int>(game.Players[0].Shotdirection.Item1, -1); break;
+                case Keys.J: game.Players[0].Shotdirection = new Tuple<int, int>(-1, game.Players[0].Shotdirection.Item2); break;
+                case Keys.K: game.Players[0].Shotdirection = new Tuple<int, int>(game.Players[0].Shotdirection.Item1, 1); break;
+                case Keys.L: game.Players[0].Shotdirection = new Tuple<int, int>(1, game.Players[0].Shotdirection.Item2); break;
+                default:
+                    break;
+            }
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                //rusenie pohybu prveho hraca, viacerych zatial neimplementujem
+                case Keys.W:
+                    if (game.Players[0].Direction.Item2 == -1)
+                    {
+                        game.Players[0].Direction = new Tuple<int, int>(game.Players[0].Direction.Item1, 0);
+                    }
+                    break;
+                case Keys.A:
+                    if (game.Players[0].Direction.Item1 == -1)
+                    {
+                        game.Players[0].Direction = new Tuple<int, int>(0, game.Players[0].Direction.Item2);
+                    }
+                    break;
+                case Keys.S:
+                    if (game.Players[0].Direction.Item2 == 1)
+                    {
+                        game.Players[0].Direction = new Tuple<int, int>(game.Players[0].Direction.Item1, 0);
+                    }
+                    break;
+                case Keys.D:
+                    if (game.Players[0].Direction.Item1 == 1)
+                    {
+                        game.Players[0].Direction = new Tuple<int, int>(0, game.Players[0].Direction.Item2);
+                    }
+                    break;
+                //rusenie strielania prveho hraca
+                case Keys.I:
+                    if (game.Players[0].Shotdirection.Item2 == -1)
+                    {
+                        game.Players[0].Shotdirection = new Tuple<int, int>(game.Players[0].Shotdirection.Item1, 0);
+                    }
+                    break;
+                case Keys.J:
+                    if (game.Players[0].Shotdirection.Item1 == -1)
+                    {
+                        game.Players[0].Shotdirection = new Tuple<int, int>(0, game.Players[0].Shotdirection.Item2);
+                    }
+                    break;
+                case Keys.K:
+                    if (game.Players[0].Shotdirection.Item2 == 1)
+                    {
+                        game.Players[0].Shotdirection = new Tuple<int, int>(game.Players[0].Shotdirection.Item1, 0);
+                    }
+                    break;
+                case Keys.L:
+                    if (game.Players[0].Shotdirection.Item1 == 1)
+                    {
+                        game.Players[0].Shotdirection = new Tuple<int, int>(0, game.Players[0].Shotdirection.Item2);
+                    }
+                    break;
+                default:
+                    break;
             }
         }
     }
