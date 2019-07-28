@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Slasher.Items
 {
@@ -22,7 +23,11 @@ namespace Slasher.Items
 
         public override void Draw()
         {
-
+            Brush b = Brushes.Aqua;
+            Rectangle r = new Rectangle(X - Form1.Xoffset / 40, Y - Form1.Xoffset / 100, Form1.Xoffset / 20, Form1.Xoffset / 50);
+            Form1.G.FillRectangle(b, r);
+            r = new Rectangle(X - Form1.Xoffset / 100, Y - Form1.Xoffset / 40, Form1.Xoffset / 50, Form1.Xoffset / 20);
+            Form1.G.FillRectangle(b, r);
         }
     }
 }

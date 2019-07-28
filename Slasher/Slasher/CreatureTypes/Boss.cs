@@ -19,5 +19,10 @@ namespace Slasher
             Attackspeed = 1.25 + 0.25 * Game.Difficulty;
             Type = "boss";
         }
+
+        public override void Drop()
+        {
+            Form1.Game.Floor[Form1.Game.Current.Item1, Form1.Game.Current.Item2].Items.Add(new Items.Upgrade(X, Y));
+        }
     }
 }

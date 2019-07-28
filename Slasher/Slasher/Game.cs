@@ -50,7 +50,7 @@ namespace Slasher
                 int h = indexes[i].Item2;
                 if (v + 1 < 9)
                 {
-                    if (floor[v + 1, h].Field[0,0] != 0)
+                    if (floor[v + 1, h].Type != "empty")
                     {
                         floor[v, h].Field[16, 8] = 1 + 4 * floor[v + 1, h].Field[0, 0];
                         floor[v + 1, h].Field[0, 8] = 3 + 4 * floor[v, h].Field[0, 0];
@@ -58,7 +58,7 @@ namespace Slasher
                 }
                 if (v - 1 >= 0)
                 {
-                    if (floor[v - 1, h].Field[0, 0] != 0)
+                    if (floor[v - 1, h].Type != "empty")
                     {
                         floor[v, h].Field[0, 8] = 3 + 4 * floor[v - 1, h].Field[0, 0];
                         floor[v - 1, h].Field[16, 8] = 1 + 4 * floor[v, h].Field[0, 0];
@@ -66,7 +66,7 @@ namespace Slasher
                 }
                 if (h + 1 < 9)
                 {
-                    if (floor[v, h + 1].Field[0, 0] != 0)
+                    if (floor[v, h + 1].Type != "empty")
                     {
                         floor[v, h].Field[8, 16] = 0 + 4 * floor[v, h + 1].Field[0, 0];
                         floor[v, h + 1].Field[8, 0] = 2 + 4 * floor[v, h].Field[0, 0];
@@ -74,7 +74,7 @@ namespace Slasher
                 }
                 if (h - 1 >= 0)
                 {
-                    if (floor[v, h - 1].Field[0, 0] != 0)
+                    if (floor[v, h - 1].Type != "empty")
                     {
                         floor[v, h].Field[8, 0] = 2 + 4 * floor[v, h - 1].Field[0, 0];
                         floor[v, h - 1].Field[8, 16] = 0 + 4 * floor[v, h].Field[0, 0];
@@ -236,7 +236,26 @@ namespace Slasher
                 if (p.Shotdirection.ToString() != "(0, 0)")
                 {
                     p.Shoot();
-                }               
+                }
+                for (int i = floor[current.Item1, current.Item2].Items.Count - 1; i >= 0; i--)
+                {
+                    if (Math.Sqrt(Math.Pow(floor[current.Item1, current.Item2].Items[i].X - p.X, 2) + Math.Pow(floor[current.Item1, current.Item2].Items[i].Y - p.Y, 2)) < p.Size * Form1.Resx / 150)
+                    {
+                        p.Dmg += floor[current.Item1, current.Item2].Items[i].Dmg;
+                        p.Speed += floor[current.Item1, current.Item2].Items[i].Speed;
+                        p.Size += floor[current.Item1, current.Item2].Items[i].Size;
+                        p.Shotspeed += floor[current.Item1, current.Item2].Items[i].Shotspeed;
+                        p.Shotsize += floor[current.Item1, current.Item2].Items[i].Shotsize;
+                        p.Attackspeed += floor[current.Item1, current.Item2].Items[i].Attackspeed;
+                        p.Hp += floor[current.Item1, current.Item2].Items[i].Hp;
+                        p.Shards += floor[current.Item1, current.Item2].Items[i].Shards;
+                        if (floor[current.Item1, current.Item2].Items[i].Type != "pickup")
+                        {
+                            p.Items.Add(floor[current.Item1, current.Item2].Items[i]);
+                        }
+                        floor[current.Item1, current.Item2].Items.RemoveAt(i);
+                    }
+                }
             }
 
             for (int i = projectiles.Count - 1; i >= 0; i--)

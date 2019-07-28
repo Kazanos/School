@@ -10,7 +10,7 @@ namespace Slasher.Items
     {
         public Shard(int x, int y) : base(x, y)
         {
-            Gold = 1;
+            Shards = 1;
             Type = "pickup";
         }
 

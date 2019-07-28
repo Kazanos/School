@@ -75,7 +75,7 @@ namespace Slasher
         //pohyb s pripadnym vyberom noveho ciela pohybu
         public void Move()
         {
-            if (movecharge >= 1500)
+            if (movecharge >= 3000)
             {
                 destination = new Tuple<int, int>(Form1.Random.Next(Form1.Xoffset + Form1.TileWidth, Form1.Xoffset + 16 * Form1.TileWidth), Form1.Random.Next(Form1.Yoffset + Form1.TileHeight, Form1.Yoffset + 16 * Form1.TileHeight));
                 movecharge = 0;
@@ -122,7 +122,7 @@ namespace Slasher
         }
 
         //dropne mincu alebo zivot
-        public void Drop()
+        public virtual void Drop()
         {
             Random random = new Random();
             int r = random.Next(1, 10);

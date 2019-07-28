@@ -16,7 +16,7 @@ namespace Slasher
         double attackspeed = 0;
         int hp = 0;
         string type = "";
-        int gold = 0;
+        int shards = 0;
         int x;
         int y;
 
@@ -39,7 +39,7 @@ namespace Slasher
         public double Attackspeed { get => attackspeed; set => attackspeed = value; }
         public int Hp { get => hp; set => hp = value; }
         public string Type { get => type; set => type = value; }
-        public int Gold { get => gold; set => gold = value; }
+        public int Shards { get => shards; set => shards = value; }
         public int X { get => x; set => x = value; }
         public int Y { get => y; set => y = value; }
     }

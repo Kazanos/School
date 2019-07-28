@@ -24,7 +24,7 @@ namespace Slasher
         double attackspeed = 2;
         int attackcharge = 0;
         List<Item> items = new List<Item>();
-        int gold = 0;
+        int shards = 0;
 
         //nakresli hraca
         public void Draw()
@@ -106,7 +106,7 @@ namespace Slasher
                                 h = Form1.Game.Indexes[i].Item2;
                                 if (v + 1 < 9)
                                 {
-                                    if (Form1.Game.Floor[v + 1, h].Field[0, 0] != 0)
+                                    if (Form1.Game.Floor[v + 1, h].Type != "empty")
                                     {
                                         Form1.Game.Floor[v, h].Field[16, 8] = 1 + 4 * Form1.Game.Floor[v + 1, h].Field[0, 0];
                                         Form1.Game.Floor[v + 1, h].Field[0, 8] = 3 + 4 * Form1.Game.Floor[v, h].Field[0, 0];
@@ -114,7 +114,7 @@ namespace Slasher
                                 }
                                 if (v - 1 >= 0)
                                 {
-                                    if (Form1.Game.Floor[v - 1, h].Field[0, 0] != 0)
+                                    if (Form1.Game.Floor[v - 1, h].Type != "empty")
                                     {
                                         Form1.Game.Floor[v, h].Field[0, 8] = 3 + 4 * Form1.Game.Floor[v - 1, h].Field[0, 0];
                                         Form1.Game.Floor[v - 1, h].Field[16, 8] = 1 + 4 * Form1.Game.Floor[v, h].Field[0, 0];
@@ -122,7 +122,7 @@ namespace Slasher
                                 }
                                 if (h + 1 < 9)
                                 {
-                                    if (Form1.Game.Floor[h + 1, h].Field[0, 0] != 0)
+                                    if (Form1.Game.Floor[v, h + 1].Type != "empty")
                                     {
                                         Form1.Game.Floor[v, h].Field[8, 16] = 0 + 4 * Form1.Game.Floor[v, h + 1].Field[0, 0];
                                         Form1.Game.Floor[v, h + 1].Field[8, 0] = 2 + 4 * Form1.Game.Floor[v, h].Field[0, 0];
@@ -130,7 +130,7 @@ namespace Slasher
                                 }
                                 if (h - 1 >= 0)
                                 {
-                                    if (Form1.Game.Floor[v + 1, h].Field[0, 0] != 0)
+                                    if (Form1.Game.Floor[v, h - 1].Type != "empty")
                                     {
                                         Form1.Game.Floor[v, h].Field[8, 0] = 2 + 4 * Form1.Game.Floor[v, h - 1].Field[0, 0];
                                         Form1.Game.Floor[v, h - 1].Field[8, 16] = 0 + 4 * Form1.Game.Floor[v, h].Field[0, 0];
@@ -198,7 +198,7 @@ namespace Slasher
         public int Hp { get => hp; set => hp = value; }
         public double Attackspeed { get => attackspeed; set => attackspeed = value; }
         public int Attackcharge { get => attackcharge; set => attackcharge = value; }
-        public int Gold { get => gold; set => gold = value; }
+        public int Shards { get => shards; set => shards = value; }
         internal List<Item> Items { get => items; set => items = value; }
     }
 }

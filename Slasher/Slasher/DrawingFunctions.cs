@@ -75,6 +75,10 @@ namespace Slasher
                     r = new Rectangle(Form1.Xoffset + 17 * Form1.TileWidth + 3 * (Form1.Xoffset / 45) + (Form1.Xoffset / 45) * (2 * (i % 10)), j * Form1.Xoffset / 12 + Form1.Yoffset + (i / 10) * (Form1.Xoffset / 12) + 1, Form1.Xoffset / 45, Form1.Xoffset / 12 - 2);
                     Form1.G.FillRectangle(b, r);
                 }
+                DrawShard(Form1.Xoffset + 17 * Form1.TileWidth + 25 * (Form1.Xoffset / 45), j * Form1.Xoffset / 12 + Form1.Yoffset * 3 / 2);
+                Font f = new Font("Verdana", 20);
+                b = Brushes.White;
+                Form1.G.DrawString(Form1.Game.Players[j].Shards.ToString(), f, b, Form1.Xoffset + 17 * Form1.TileWidth + 27 * (Form1.Xoffset / 45), j * Form1.Xoffset / 12 + Form1.Yoffset);
             }
 
         }
