@@ -106,7 +106,7 @@ namespace Slasher
                                 h = Form1.Game.Indexes[i].Item2;
                                 if (v + 1 < 9)
                                 {
-                                    if (Form1.Game.Floor[v + 1, h].Type != "empty")
+                                    if (Form1.Game.Floor[v + 1, h].Field[0, 0] != 0)
                                     {
                                         Form1.Game.Floor[v, h].Field[16, 8] = 1 + 4 * Form1.Game.Floor[v + 1, h].Field[0, 0];
                                         Form1.Game.Floor[v + 1, h].Field[0, 8] = 3 + 4 * Form1.Game.Floor[v, h].Field[0, 0];
@@ -114,7 +114,7 @@ namespace Slasher
                                 }
                                 if (v - 1 >= 0)
                                 {
-                                    if (Form1.Game.Floor[v - 1, h].Type != "empty")
+                                    if (Form1.Game.Floor[v - 1, h].Field[0, 0] != 0)
                                     {
                                         Form1.Game.Floor[v, h].Field[0, 8] = 3 + 4 * Form1.Game.Floor[v - 1, h].Field[0, 0];
                                         Form1.Game.Floor[v - 1, h].Field[16, 8] = 1 + 4 * Form1.Game.Floor[v, h].Field[0, 0];
@@ -122,7 +122,7 @@ namespace Slasher
                                 }
                                 if (h + 1 < 9)
                                 {
-                                    if (Form1.Game.Floor[h + 1, h].Type != "empty")
+                                    if (Form1.Game.Floor[h + 1, h].Field[0, 0] != 0)
                                     {
                                         Form1.Game.Floor[v, h].Field[8, 16] = 0 + 4 * Form1.Game.Floor[v, h + 1].Field[0, 0];
                                         Form1.Game.Floor[v, h + 1].Field[8, 0] = 2 + 4 * Form1.Game.Floor[v, h].Field[0, 0];
@@ -130,7 +130,7 @@ namespace Slasher
                                 }
                                 if (h - 1 >= 0)
                                 {
-                                    if (Form1.Game.Floor[v + 1, h].Type != "empty")
+                                    if (Form1.Game.Floor[v + 1, h].Field[0, 0] != 0)
                                     {
                                         Form1.Game.Floor[v, h].Field[8, 0] = 2 + 4 * Form1.Game.Floor[v, h - 1].Field[0, 0];
                                         Form1.Game.Floor[v, h - 1].Field[8, 16] = 0 + 4 * Form1.Game.Floor[v, h].Field[0, 0];

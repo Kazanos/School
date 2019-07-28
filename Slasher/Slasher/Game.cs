@@ -50,7 +50,7 @@ namespace Slasher
                 int h = indexes[i].Item2;
                 if (v + 1 < 9)
                 {
-                    if (floor[v + 1, h].Type != "empty")
+                    if (floor[v + 1, h].Field[0,0] != 0)
                     {
                         floor[v, h].Field[16, 8] = 1 + 4 * floor[v + 1, h].Field[0, 0];
                         floor[v + 1, h].Field[0, 8] = 3 + 4 * floor[v, h].Field[0, 0];
@@ -58,7 +58,7 @@ namespace Slasher
                 }
                 if (v - 1 >= 0)
                 {
-                    if (floor[v - 1, h].Type != "empty")
+                    if (floor[v - 1, h].Field[0, 0] != 0)
                     {
                         floor[v, h].Field[0, 8] = 3 + 4 * floor[v - 1, h].Field[0, 0];
                         floor[v - 1, h].Field[16, 8] = 1 + 4 * floor[v, h].Field[0, 0];
@@ -66,7 +66,7 @@ namespace Slasher
                 }
                 if (h + 1 < 9)
                 {
-                    if (floor[h + 1, h].Type != "empty")
+                    if (floor[v, h + 1].Field[0, 0] != 0)
                     {
                         floor[v, h].Field[8, 16] = 0 + 4 * floor[v, h + 1].Field[0, 0];
                         floor[v, h + 1].Field[8, 0] = 2 + 4 * floor[v, h].Field[0, 0];
@@ -74,7 +74,7 @@ namespace Slasher
                 }
                 if (h - 1 >= 0)
                 {
-                    if (floor[v + 1, h].Type != "empty")
+                    if (floor[v, h - 1].Field[0, 0] != 0)
                     {
                         floor[v, h].Field[8, 0] = 2 + 4 * floor[v, h - 1].Field[0, 0];
                         floor[v, h - 1].Field[8, 16] = 0 + 4 * floor[v, h].Field[0, 0];

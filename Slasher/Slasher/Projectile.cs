@@ -93,7 +93,7 @@ namespace Slasher
             {
                 b = Brushes.DarkViolet;
             }
-            Rectangle r = new Rectangle((int)Math.Round(x - innerradius), (int)Math.Round(y - innerradius), (int)Math.Round(2 * innerradius), (int)Math.Round(2 * innerradius));
+            Rectangle r = new Rectangle((int)Math.Round(x - radius), (int)Math.Round(y - radius), (int)Math.Round(2 * radius), (int)Math.Round(2 * radius));
             Form1.G.FillEllipse(b, r);
             r = new Rectangle((int)Math.Round(x - innerradius), (int)Math.Round(y - innerradius), (int)Math.Round(2 * innerradius), (int)Math.Round(2 * innerradius));
             b = Brushes.White;

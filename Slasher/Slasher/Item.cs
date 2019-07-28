@@ -40,5 +40,7 @@ namespace Slasher
         public int Hp { get => hp; set => hp = value; }
         public string Type { get => type; set => type = value; }
         public int Gold { get => gold; set => gold = value; }
+        public int X { get => x; set => x = value; }
+        public int Y { get => y; set => y = value; }
     }
 }

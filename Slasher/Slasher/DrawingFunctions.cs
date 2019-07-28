@@ -78,5 +78,13 @@ namespace Slasher
             }
 
         }
+
+        //nakresli shard (peniaze)
+        public static void DrawShard(int x, int y)
+        {
+            Pen p = new Pen(Color.Aqua);
+            Point[] points = new Point[] {new Point(x, y), new Point(x, y - Form1.Resy/75), new Point(x + Form1.Resx/200, y), new Point(x, y + Form1.Resy/75), new Point(x - Form1.Resx /200, y) };
+            Form1.G.DrawPolygon(p, points);
+        }
     }
 }

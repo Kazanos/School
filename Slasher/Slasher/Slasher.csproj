@@ -56,7 +56,7 @@
     </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="Items\Coin.cs" />
+    <Compile Include="Items\Shard.cs" />
     <Compile Include="Items\Healthpoint.cs" />
     <Compile Include="Items\Upgrade.cs" />
     <Compile Include="Player.cs" />

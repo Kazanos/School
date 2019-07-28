@@ -75,10 +75,9 @@ namespace Slasher
         //pohyb s pripadnym vyberom noveho ciela pohybu
         public void Move()
         {
-            Random random = new Random();
             if (movecharge >= 1500)
             {
-                destination = new Tuple<int, int>(random.Next(Form1.Xoffset + Form1.TileWidth, Form1.Xoffset + 16 * Form1.TileWidth), random.Next(Form1.Yoffset + Form1.TileHeight, Form1.Yoffset + 16 * Form1.TileHeight));
+                destination = new Tuple<int, int>(Form1.Random.Next(Form1.Xoffset + Form1.TileWidth, Form1.Xoffset + 16 * Form1.TileWidth), Form1.Random.Next(Form1.Yoffset + Form1.TileHeight, Form1.Yoffset + 16 * Form1.TileHeight));
                 movecharge = 0;
             }
 
@@ -88,7 +87,7 @@ namespace Slasher
             //zabranuje vzacnemu crashu, kde destinacia trafi prave poziciu kde stoji, alebo pohyb skonci presne na destinacii
             while (Math.Abs(hypotenuse) <= speed)
             {
-                destination = new Tuple<int, int>(random.Next(Form1.Xoffset + Form1.TileWidth, Form1.Xoffset + 16 * Form1.TileWidth), random.Next(Form1.Yoffset + Form1.TileHeight, Form1.Yoffset + 16 * Form1.TileHeight));
+                destination = new Tuple<int, int>(Form1.Random.Next(Form1.Xoffset + Form1.TileWidth, Form1.Xoffset + 16 * Form1.TileWidth), Form1.Random.Next(Form1.Yoffset + Form1.TileHeight, Form1.Yoffset + 16 * Form1.TileHeight));
                 hypotenuse = Math.Sqrt(Math.Pow(destination.Item1 - x, 2) + Math.Pow(destination.Item2 - y, 2));
             }
 
@@ -131,7 +130,7 @@ namespace Slasher
             {
                 Form1.Game.Floor[Form1.Game.Current.Item1, Form1.Game.Current.Item2].Items.Add(new Items.Healthpoint(x, y));
             }
-            else Form1.Game.Floor[Form1.Game.Current.Item1, Form1.Game.Current.Item2].Items.Add(new Items.Coin(x, y));
+            else Form1.Game.Floor[Form1.Game.Current.Item1, Form1.Game.Current.Item2].Items.Add(new Items.Shard(x, y));
         }
 
         public int X { get => x; set => x = value; }
