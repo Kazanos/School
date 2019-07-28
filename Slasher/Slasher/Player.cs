@@ -138,6 +138,11 @@ namespace Slasher
                                 }
                             }
                         }
+                        else
+                        {
+                            Form1.Running = false;
+                            Form1.Won = true;
+                        }
                     }
                 }
             }

@@ -227,35 +227,48 @@ namespace Slasher
         //vsetky cinnosti pohyblivych veci
         public void Move()
         {
+            int deadplayers = 0;
             foreach (Player p in players)
             {
-                if (p.Direction.ToString() != "(0, 0)")
+                if (p.Hp > 0)
                 {
-                    p.Move();
-                }
-                if (p.Shotdirection.ToString() != "(0, 0)")
-                {
-                    p.Shoot();
-                }
-                for (int i = floor[current.Item1, current.Item2].Items.Count - 1; i >= 0; i--)
-                {
-                    if (Math.Sqrt(Math.Pow(floor[current.Item1, current.Item2].Items[i].X - p.X, 2) + Math.Pow(floor[current.Item1, current.Item2].Items[i].Y - p.Y, 2)) < p.Size * Form1.Resx / 150)
+                    if (p.Direction.ToString() != "(0, 0)")
                     {
-                        p.Dmg += floor[current.Item1, current.Item2].Items[i].Dmg;
-                        p.Speed += floor[current.Item1, current.Item2].Items[i].Speed;
-                        p.Size += floor[current.Item1, current.Item2].Items[i].Size;
-                        p.Shotspeed += floor[current.Item1, current.Item2].Items[i].Shotspeed;
-                        p.Shotsize += floor[current.Item1, current.Item2].Items[i].Shotsize;
-                        p.Attackspeed += floor[current.Item1, current.Item2].Items[i].Attackspeed;
-                        p.Hp += floor[current.Item1, current.Item2].Items[i].Hp;
-                        p.Shards += floor[current.Item1, current.Item2].Items[i].Shards;
-                        if (floor[current.Item1, current.Item2].Items[i].Type != "pickup")
+                        p.Move();
+                    }
+                    if (p.Shotdirection.ToString() != "(0, 0)")
+                    {
+                        p.Shoot();
+                    }
+                    for (int i = floor[current.Item1, current.Item2].Items.Count - 1; i >= 0; i--)
+                    {
+                        if (Math.Sqrt(Math.Pow(floor[current.Item1, current.Item2].Items[i].X - p.X, 2) + Math.Pow(floor[current.Item1, current.Item2].Items[i].Y - p.Y, 2)) < p.Size * Form1.Resx / 150)
                         {
-                            p.Items.Add(floor[current.Item1, current.Item2].Items[i]);
+                            p.Dmg += floor[current.Item1, current.Item2].Items[i].Dmg;
+                            p.Speed += floor[current.Item1, current.Item2].Items[i].Speed;
+                            p.Size += floor[current.Item1, current.Item2].Items[i].Size;
+                            p.Shotspeed += floor[current.Item1, current.Item2].Items[i].Shotspeed;
+                            p.Shotsize += floor[current.Item1, current.Item2].Items[i].Shotsize;
+                            p.Attackspeed += floor[current.Item1, current.Item2].Items[i].Attackspeed;
+                            p.Hp += floor[current.Item1, current.Item2].Items[i].Hp;
+                            p.Shards += floor[current.Item1, current.Item2].Items[i].Shards;
+                            if (floor[current.Item1, current.Item2].Items[i].Type != "pickup")
+                            {
+                                p.Items.Add(floor[current.Item1, current.Item2].Items[i]);
+                            }
+                            floor[current.Item1, current.Item2].Items.RemoveAt(i);
                         }
-                        floor[current.Item1, current.Item2].Items.RemoveAt(i);
                     }
                 }
+                else
+                {
+                    deadplayers += 1;
+                }
+            }
+
+            if (deadplayers == players.Count)
+            {
+                Form1.Reset();
             }
 
             for (int i = projectiles.Count - 1; i >= 0; i--)
@@ -287,6 +300,7 @@ namespace Slasher
             }
             DrawingFunctions.DrawMinimap();
             DrawingFunctions.DrawStats();
+            DrawingFunctions.DrawControls();
         }
     }
 

@@ -46,10 +46,14 @@ namespace Slasher
             {
                 foreach (Player p in Form1.Game.Players)
                 {
-                    if (Math.Sqrt(Math.Pow(x - p.X, 2) + Math.Pow(y - p.Y, 2)) < (size / 2 + p.Size * Form1.Resx / 150))
+                    if (p.Hp > 0 & Math.Sqrt(Math.Pow(x - p.X, 2) + Math.Pow(y - p.Y, 2)) < (size / 2 + p.Size * Form1.Resx / 150))
                     {
                         p.Hp -= (int)damage;
                         Form1.Game.Projectiles.Remove(this);
+                        if (true)
+                        {
+
+                        }
                     }
                 }
             }

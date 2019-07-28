@@ -24,6 +24,8 @@ namespace Slasher
         static Graphics g;
         static Game game;
         static Random random = new Random();
+        static bool running = true;
+        static bool won = false;
 
         internal static Game Game { get => game; set => game = value; }
         public static int Resx { get => resx; set => resx = value; }
@@ -34,6 +36,8 @@ namespace Slasher
         public static int Yoffset { get => yoffset; set => yoffset = value; }
         public static Graphics G { get => g; set => g = value; }
         public static Random Random { get => random; set => random = value; }
+        public static bool Running { get => running; set => running = value; }
+        public static bool Won { get => won; set => won = value; }
 
         public Form1()
         {
@@ -49,6 +53,12 @@ namespace Slasher
             timer1.Start();
         }
 
+        public static void Reset()
+        {
+            game = new Game();
+            game.Players.Add(new Player());
+        }
+
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -57,8 +67,7 @@ namespace Slasher
         private void timer1_Tick(object sender, EventArgs e)
         {
             game.Move();
-            game.Draw();
-            pictureBox1.Refresh();
+            game.Draw(); 
             foreach (Player p in game.Players)
             {
                 p.Attackcharge += timer1.Interval;
@@ -69,6 +78,14 @@ namespace Slasher
                 enemy.Attackcharge += timer1.Interval;
                 enemy.Shoot();
             }
+            if (!running & won)
+            {
+                Font f = new Font("Verdana", 60);
+                Brush b = Brushes.Green;
+                Form1.G.DrawString("You Won", f, b, Form1.Resx / 2, Form1.Resy / 2);
+                timer1.Stop();
+            }
+            pictureBox1.Refresh();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -90,6 +107,39 @@ namespace Slasher
                 case Keys.J: game.Players[0].Shotdirection = new Tuple<int, int>(-1, game.Players[0].Shotdirection.Item2); break;
                 case Keys.K: game.Players[0].Shotdirection = new Tuple<int, int>(game.Players[0].Shotdirection.Item1, 1); break;
                 case Keys.L: game.Players[0].Shotdirection = new Tuple<int, int>(1, game.Players[0].Shotdirection.Item2); break;
+                //nakupovanie statov
+                case Keys.D1:
+                    foreach (Player p in game.Players)
+                    {
+                        if (p.Shards >= 3)
+                        {
+                            p.Shards -= 3;
+                            p.Dmg += 0.1;
+                        }
+                    }
+                    break;
+                case Keys.D2:
+                    foreach (Player p in game.Players)
+                    {
+                        if (p.Shards >= 4)
+                        {
+                            p.Shards -= 4;
+                            p.Hp += 1;
+                            p.Size += 0.1;
+                        }
+                    }
+                    break;
+                case Keys.D3:
+                    foreach (Player p in game.Players)
+                    {
+                        if (p.Shards >= 5)
+                        {
+                            p.Shards -= 5;
+                            p.Attackspeed += 0.2;
+                            p.Shotsize -= 0.1;
+                        }
+                    }
+                    break;
                 default:
                     break;
             }

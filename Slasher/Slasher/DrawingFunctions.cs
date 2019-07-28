@@ -90,5 +90,17 @@ namespace Slasher
             Point[] points = new Point[] {new Point(x, y), new Point(x, y - Form1.Resy/75), new Point(x + Form1.Resx/200, y), new Point(x, y + Form1.Resy/75), new Point(x - Form1.Resx /200, y) };
             Form1.G.DrawPolygon(p, points);
         }
+
+        //nakresli ovladanie
+        public static void DrawControls()
+        {
+            Font f = new Font("Verdana", Form1.Resx / 200);
+            Brush b = Brushes.White;
+            Form1.G.DrawString("WASD - Movement", f, b, Form1.Resx * 31 / 40, Form1.Resy * 24 / 40);
+            Form1.G.DrawString("IJKL - Shooting", f, b, Form1.Resx * 31 / 40, Form1.Resy * 25 / 40);
+            Form1.G.DrawString("1 - +0.1 DMG for 3 Shards", f, b, Form1.Resx * 31 / 40, Form1.Resy * 26 / 40);
+            Form1.G.DrawString("2 - +1 HP and +0.1 SIZE for 4 Shards", f, b, Form1.Resx * 31 / 40, Form1.Resy * 27 / 40);
+            Form1.G.DrawString("3 - +0.2 AS and -0.1 SHOTSIZE for 5 Shards", f, b, Form1.Resx * 31 / 40, Form1.Resy * 28 / 40);
+        }
     }
 }
